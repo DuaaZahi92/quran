@@ -1,4 +1,4 @@
-package org.quran.hafiz.entity;
+package org.quran.hafiz.crud.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

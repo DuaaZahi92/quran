@@ -1,4 +1,8 @@
-package org.quran.hafiz.entity;
+package org.quran.hafiz.crud.entity;
+
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -12,17 +16,23 @@ import java.io.Serializable;
  * To change this template use File | Settings | File and Code Templates.
  */
 @Entity
+@Table(name="aya")
 public class Aya implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Short id;
 
+    @Column(name="order_in_sura")
     private Short orderInSura;
 
-    @ManyToOne
+    @NotFound(action = NotFoundAction.IGNORE)
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="sura", nullable=true)
     private Sura sura;
 
     private String text;
 
+    @Column(name="letter_count")
     private Short letterCount;
 
     public Aya() {

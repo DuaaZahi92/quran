@@ -1,0 +1,8 @@
+spring.datasource.driverClassName=com.mysql.jdbc.Driver
+spring.datasource.url=jdbc:mysql://localhost:3306/quran?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&verifyServerCertificate=false&useSSL=true
+spring.datasource.username=root
+spring.datasource.password=TywkCOxrn26i
+spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
+spring.jpa.show-sql=true
+
+server.port=8080

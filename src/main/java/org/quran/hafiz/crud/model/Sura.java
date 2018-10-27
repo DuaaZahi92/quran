@@ -1,22 +1,24 @@
-package org.quran.hafiz.entity;
+package org.quran.hafiz.crud.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import lombok.Getter;
+import lombok.Setter;
+import org.quran.hafiz.crud.enums.SuraType;
+
+import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
 /**
  * Created by IntelliJ IDEA.
  * User: duaazahi
- * Date: Sat 05 May, 2018
- * Time: 10:06 PM
+ * Date: Fri 08 Jun, 2018
+ * Time: 4:14 PM
  * Project: quran.hafiz
  * To change this template use File | Settings | File and Code Templates.
  */
-@Entity
+@Getter
+@Setter
+@XmlRootElement
 public class Sura implements Serializable {
-    @Id
     private Byte id;
 
     private Short ayaCount;
@@ -27,13 +29,9 @@ public class Sura implements Serializable {
 
     private String enTransliteration;
 
-    @ManyToOne
     private SuraType suraType;
 
     private Byte order;
-
-    public Sura() {
-    }
 
     public Byte getId() {
         return id;

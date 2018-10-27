@@ -1,28 +1,27 @@
-package org.quran.hafiz.entity;
+package org.quran.hafiz.crud.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
  * Created by IntelliJ IDEA.
  * User: duaazahi
- * Date: Wed 09 May, 2018
- * Time: 10:26 PM
+ * Date: Sat 05 May, 2018
+ * Time: 10:09 PM
  * Project: quran.hafiz
  * To change this template use File | Settings | File and Code Templates.
  */
 @Entity
-public class Hizb implements Serializable {
-
+public class Juz implements Serializable {
     @Id
     private Byte id;
+
+    private String arName;
 
     @OneToOne
     private Aya startAya;
 
-    public Hizb() {
+    public Juz() {
     }
 
     public Byte getId() {
@@ -31,6 +30,14 @@ public class Hizb implements Serializable {
 
     public void setId(Byte id) {
         this.id = id;
+    }
+
+    public String getArName() {
+        return arName;
+    }
+
+    public void setArName(String arName) {
+        this.arName = arName;
     }
 
     public Aya getStartAya() {
